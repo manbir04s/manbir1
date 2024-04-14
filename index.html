@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meown - A Blog for Cat Lovers</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles for Pet Services */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .collapsible {
+      background-color: #f2f2f2;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #ddd;
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+
+    .collapsible.active + .content {
+      display: block;
+    }
+    
+    /* Map container */
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meown</h1>
+    <nav>
+      <ul>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#pet-services">Pet Services</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="blog">
+      <h2>Blog</h2>
+      <ul>
+        <li><a href="#cat_name">Do cats know their name?</a></li>
+        <li><a href="#healthy_pets">Essential tips to raise healthy pets</a></li>
+        <li><a href="#cat_attack">Why does my cat attack me?</a></li>
+        <li><a href="#birthday_party">How to throw a birthday party for your cat?</a></li>
+      </ul>
+    </section>
+
+    <section id="cat_name">
+      <h2>Do cats know their name?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </section>
+
+    <section id="healthy_pets">
+      <h2>Essential tips to raise healthy pets</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </section>
+
+    <section id="cat_attack">
+      <h2>Why does my cat attack me?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </section>
+
+    <section id="birthday_party">
+      <h2>How to throw a birthday party for your cat?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <!-- Map container -->
+      <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19523.60301467576!2d-113.83241505!3d52.289679549999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1713054593908!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+    
+    <section id="pet-services">
+      <h2>Pet Services</h2>
+      <div class="grid-container">
+        <!-- Grid for Grooming -->
+        <div>
+          <h3>Grooming</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+        <!-- Collapsible Content Blocks for Pets Hotel -->
+        <div>
+          <h3 class="collapsible">Pets Hotel</h3>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+          </div>
+        </div>
+        <!-- Collapsible Sets for Pet Day Camp -->
+        <div>
+          <h3 class="collapsible">Pet Day Camp</h3>
+          <div class="content">
+            <h4>Set 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <h4>Set 2</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Meown. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Handle back button click
+      $("#backBtn").click(function() {
+        window.history.back();
+      });
+
+      // Collapsible functionality
+      $(".collapsible").click(function() {
+        $(this).toggleClass("active");
+        var content = $(this).next();
+        if (content.css("display") === "block") {
+          content.css("display", "none");
+        } else {
+          content.css("display", "block");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
